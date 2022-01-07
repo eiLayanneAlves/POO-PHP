@@ -1,0 +1,158 @@
+class Pessoa{
+         var $nome;
+        function Pessoa($nome){
+            $this->setNome($nome)
+        }
+
+        function getNome(){
+             return $this->nome;
+        }
+
+       function setNome($nm){
+           $this->nome = $nm;
+       }
+}
+function AlterarPessoa($Obj, $NovoNome){
+        $Obj->setName($NovoNome);
+}
+$p = new Pessoa(‘Jose’);
+AlterarPessoa($p, ‘Joao’);
+echo  $p->getNome();
+class MinhaClasse{
+        private $codigo = null;
+         public setCodigo($id){
+            $this->codigo;
+        }
+}
+class Carro{
+        function __construct(){
+            echo “Carro Construído”;
+          }
+}
+class Carro{
+        function __destruct(){
+            echo “Carro Destruído”;
+         }
+}
+interface Operacao{
+        function executar();
+}
+class Somar implements Operação{
+        public $n1;
+        public $n2;
+        function executar(){
+            return $this->n1+$this->n2;
+        }
+}
+class Subtrair implements Operação{
+        public $n1;
+        public $n2;
+        function executar(){
+            return $this->n1-$this->n2;
+        }
+}
+
+if ($Obj instanceof Pessoa) {
+        echo “O Objeto verificado e uma Pessoa”;
+}
+class Cachorro{
+        final function Latir(){
+            echo “Cachorro Latindo”;
+        }
+}
+final class Carro{
+
+}
+class CarroNacional extends Carro{
+}
+class Aluno{
+        function __clone(){
+            echo “Objeto clonado”;
+        }
+}
+
+$Alunos = new Aluno;
+$CopiaAlunos = clone $Alunos;
+class Mensagens{
+        const Sucesso = “Operação realizada com Sucesso”;
+        const Erro = “Um erro ocorreu nesta operação”;
+}
+
+echo Mensagens::Sucesso;
+echo Mensagens::Erro;
+class Conexao{
+        static function GetConexao(){
+            echo “Conexão realizada”;
+        }
+}
+
+Conexão::GetConexao();
+class Conexao{
+        static private $conection = null;
+        static function GetConexao(){
+            retun self::$conection;
+        }
+}
+
+Conexão::GetConexao();
+
+abstract class ClasseBase{
+
+}
+
+$base = new ClasseBase;
+abstract class Base{
+        abstract function Executar();
+}
+function Falar(SerHumano $Obj){
+
+}
+Class MinhaExcecao extends Exception{
+  public $erro;
+  function __construct($erro){
+      $this->erro = $erro;
+  }
+}
+
+try {
+       throw new MinhaExcecao(‘Esse e o meu erro !!!’);
+}catch(MinhaExcecao $e) {
+      echo “Um erro ocorreu com a seguinte mensagem: $e->erro;”
+}catch(Exception $e) {
+      echo “Um erro genérico ocorreu”;
+}
+foreach ($array as &$value){
+              $value *= 2;
+}
+function referencia(&$param = null){
+   if ($params === null){
+       echo “parâmetro nulo”;
+   }
+}
+<veiculos>
+
+   <carro>
+
+     <marca>Honda</marca>
+
+     <modelo>Civic</modelo>
+
+  </carro>
+
+  <carro>
+
+     <marca>Toyota</marca>
+
+      <modelo>Corolla</modelo>
+
+   </carro>
+
+</veiculos>
+
+
+
+$veiculos = simplexml_load_file(‘carros.xml’);
+
+foreach($veiculos->carro as $carro){
+
+         echo “O carro $carro->modelo é fabricado pela $carro->marca”;
